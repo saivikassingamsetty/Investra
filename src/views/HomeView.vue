@@ -1,17 +1,51 @@
 <template>
-  <header id="header" class="sticky top-0 z-10">
-    <section class="flex justify-between">
-      <img
-        src="../assets/investra_logo.png"
-        alt="Investra Logo"
-        class="h-20 w-20"
-        draggable="false"
-      />
-      <nav class="m-6">
-        <a class="bg-blue-200 p-2 rounded hover:bg-blue-300 cursor-pointer">Login</a>
+  <header id="header" class="sticky top-0 z-10 shadow-md flex justify-between py-4 px-10">
+    <section>
+      <a href="#home" class="flex my-auto">
+        <img
+          src="../assets/investra_logo.png"
+          alt="Investra Logo"
+          class="h-10 w-20 my-auto object-cover header-logo"
+          draggable="false"
+        />
+        <h1 class="text-xl text-blue-700 font-bold m-2 hidden min-[330px]:block">Investra</h1>
+      </a>
+    </section>
+    <section class="flex space-x-6">
+      <nav class="my-auto hidden md:block space-x-6">
+        <a href="#home" class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
+          >Features</a
+        >
+        <a
+          href="#features"
+          class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
+          >Insights</a
+        >
+        <a href="#about" class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
+          >Testimonials</a
+        >
+        <a href="#about" class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
+          >Pricing</a
+        >
+        <a
+          href="#contact"
+          class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
+          >Contact</a
+        >
       </nav>
+      <a
+        href="#login"
+        class="bg-blue-700 text-white px-4 py-2 text-center my-auto rounded shadow cursor-pointer"
+        >Login</a
+      >
     </section>
   </header>
 </template>
 
 <script setup lang="ts"></script>
+
+<style scoped>
+.header-logo {
+  object-position: 0 25%;
+}
+</style>
