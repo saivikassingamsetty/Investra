@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col md:flex-row items-center justify-center py-16 px-6">
+  <section id="hero" class="flex flex-col md:flex-row items-center justify-center py-16 px-6">
     <div class="text-center md:text-start">
       <h1 class="font-extrabold text-4xl md:text-5xl leading-tight">
         Your Investments, Simplified and Smart

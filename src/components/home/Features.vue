@@ -1,12 +1,12 @@
 <template>
-  <section id="features" class="p-6 bg-gray-50">
+  <section id="features" class="p-6 bg-gray-50 scroll-m-20">
     <div class="flex flex-col items-center text-center">
       <h1 class="font-extrabold text-3xl">Why Choose Investra?</h1>
       <p class="text-slate-600 font-medium">
         Unlock the true potential of your finances with powerful features.
       </p>
     </div>
-    <div class="m-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="m-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="flex flex-col items-center text-center gap-2">
         <div
           class="text-blue-600 bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center"

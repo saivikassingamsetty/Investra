@@ -4,7 +4,7 @@
     class="sticky top-0 z-10 shadow-md flex justify-between py-4 pl-2 pr-6 bg-gray-50"
   >
     <section>
-      <a href="#home" class="flex my-auto">
+      <a href="/" class="flex my-auto">
         <img
           src="../../assets/investra_logo.png"
           alt="Investra Logo"

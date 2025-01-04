@@ -2,6 +2,7 @@
   <Header />
   <Hero />
   <Features />
+  <Testimonials />
 </template>
 
 <script setup lang="ts">
