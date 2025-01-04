@@ -1,7 +1,7 @@
 <template>
   <header
     id="header"
-    class="sticky top-0 z-10 shadow-md flex justify-between py-4 pl-2 pr-6 bg-white"
+    class="sticky top-0 z-10 shadow-md flex justify-between py-4 pl-2 pr-6 bg-gray-50"
   >
     <section>
       <a href="#home" class="flex my-auto">

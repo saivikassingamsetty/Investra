@@ -1,6 +1,7 @@
 <template>
   <Header />
   <Hero />
+  <Features />
 </template>
 
 <script setup lang="ts">

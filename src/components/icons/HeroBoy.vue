@@ -1935,5 +1935,4 @@ svg#freepik_stories-revenue.animated #freepik--Character--inject-2 {
     opacity: 1;
   }
 }
-
 </style>
