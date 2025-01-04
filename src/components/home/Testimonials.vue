@@ -1,6 +1,6 @@
 <template>
   <section id="testimonials" class="bg-gray-100 py-16 scroll-m-20">
-    <h1 class="text-center font-bold text-2xl">What Our Users Are Saying</h1>
+    <h1 class="text-center font-extrabold text-3xl">What Our Users Are Saying</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <Testimonial v-for="detail in details" :key="detail.name" v-bind="detail" />
     </div>

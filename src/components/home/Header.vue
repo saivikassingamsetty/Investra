@@ -18,30 +18,33 @@
     </section>
     <section class="flex space-x-6">
       <nav class="my-auto hidden md:block space-x-6">
+        <a href="#hero" class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
+          >Home</a
+        >
         <a
           href="#features"
           class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
           >Features</a
         >
-        <a
+        <!-- <a
           href="#insights"
           class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
           >Insights</a
-        >
+        > -->
         <a
           href="#testimonials"
           class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
           >Testimonials</a
         >
-        <a
+        <!-- <a
           href="#pricing"
           class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
           >Pricing</a
-        >
+        > -->
         <a
           href="#contact"
           class="cursor-pointer text-slate-600 hover:text-blue-700 transition-colors"
-          >Contact</a
+          >Contact Us</a
         >
       </nav>
       <a

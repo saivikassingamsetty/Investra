@@ -1,8 +1,10 @@
 <template>
   <section class="bg-gradient-to-r from-indigo-600 to-blue-500 py-6">
     <div class="text-center m-12 flex flex-col gap-4">
-      <h1 class="text-3xl font-bold text-white">Ready to Take Control of Your Financial Future?</h1>
-      <p class="text-white">
+      <h1 class="text-4xl font-extrabold text-white">
+        Ready to Take Control of Your Financial Future?
+      </h1>
+      <p class="text-gray-200">
         Join thousands of investors leveraging Investra to manage their portfolios effortlessly.
         Sign up today and transform the way you handle your finances.
       </p>
