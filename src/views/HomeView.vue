@@ -3,6 +3,7 @@
   <Hero />
   <Features />
   <Testimonials />
+  <CallToAction />
 </template>
 
 <script setup lang="ts">
