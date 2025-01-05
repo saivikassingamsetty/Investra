@@ -47,10 +47,10 @@
           >Contact Us</a
         >
       </nav>
-      <a
-        href="/login"
+      <RouterLink
+        to="/login"
         class="bg-blue-600 text-white px-6 py-3 text-center my-auto rounded shadow cursor-pointer"
-        >Login</a
+        >Login</RouterLink
       >
     </section>
   </header>
