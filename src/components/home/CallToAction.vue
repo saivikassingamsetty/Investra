@@ -9,8 +9,10 @@
         Sign up today and transform the way you handle your finances.
       </p>
       <nav class="flex justify-center items-center gap-4 mt-2">
-        <a href="/login" class="px-6 bg-white text-blue-600 py-2 rounded-lg shadow-lg font-bold"
-          >Get Started Now</a
+        <RouterLink
+          to="/login"
+          class="px-6 bg-white text-blue-600 py-2 rounded-lg shadow-lg font-bold"
+          >Get Started Now</RouterLink
         >
         <a
           href="#features"

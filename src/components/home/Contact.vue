@@ -28,7 +28,7 @@
           ></textarea>
           <button
             type="submit"
-            class="bg-indigo-600 text-white py-2 mt-2 rounded-lg shadow-lg hover:bg-indigo-700"
+            class="bg-indigo-600 text-white py-3 mt-2 rounded-lg shadow-lg hover:bg-indigo-700"
           >
             Send Message
           </button>

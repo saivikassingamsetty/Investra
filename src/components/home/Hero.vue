@@ -14,16 +14,16 @@
       <div class="m-4 flex space-x-4 items-center justify-center md:justify-start">
         <a
           href="#features"
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md font-medium hover:bg-blue-700 transition"
+          class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg font-medium hover:bg-blue-700 transition"
         >
           Explore Features
         </a>
-        <a
-          href="/login"
-          class="text-blue-600 px-6 py-3 rounded-lg shadow-md border-blue-600 border hover:bg-blue-600 hover:text-white transition"
+        <RouterLink
+          to="/login"
+          class="text-blue-600 px-6 py-3 rounded-lg shadow-lg border-blue-600 border hover:bg-blue-600 hover:text-white transition"
         >
           Get Started
-        </a>
+        </RouterLink>
       </div>
     </div>
     <HeroBoy class="flex justify-center" />

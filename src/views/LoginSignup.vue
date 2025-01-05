@@ -9,7 +9,7 @@
         </svg>
       </div>
     </RouterLink>
-    <div class="container flex items-center justify-center h-full relative overflow-hidden">
+    <div class="container flex items-center justify-center h-full relative overflow-hidden mx-auto">
       <div
         :class="{ active: !isSignup }"
         class="h-3/5 w-full bg-white m-6 max-w-4xl mx-auto rounded-3xl shadow-xl flex absolute overflow-hidden"

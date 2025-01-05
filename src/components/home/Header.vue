@@ -49,7 +49,7 @@
       </nav>
       <RouterLink
         to="/login"
-        class="bg-blue-600 text-white px-6 py-3 text-center my-auto rounded shadow cursor-pointer"
+        class="bg-blue-600 text-white px-6 py-2 text-center my-auto rounded-lg shadow-lg cursor-pointer"
         >Login</RouterLink
       >
     </section>
