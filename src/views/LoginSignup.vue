@@ -10,19 +10,22 @@
       </div>
     </RouterLink>
     <div class="container flex items-center justify-center h-full relative overflow-hidden">
-      <div class="h-1/2 w-full bg-white m-6 max-w-2xl mx-auto rounded-3xl shadow-xl flex absolute">
+      <div
+        :class="{ active: !isSignup }"
+        class="h-3/5 w-full bg-white m-6 max-w-4xl mx-auto rounded-3xl shadow-xl flex absolute overflow-hidden"
+      >
         <!-- Sign In blue container -->
         <div
-          v-if="isSignup"
-          class="h-full w-1/2 bg-indigo-500 rounded-r-[120px] text-white flex flex-col items-center justify-center gap-4 absolute left-0 translate-x-[0%]"
+          id="signin-blue"
+          class="h-full w-1/2 bg-indigo-500 rounded-r-[120px] text-white flex flex-col items-center justify-center gap-4 absolute left-0 z-10"
         >
-          <h1 class="text-2xl font-bold text-center">Welcome Back!</h1>
-          <p class="text-gray-100 font-normal text-center text-sm">
+          <h1 class="text-3xl font-extrabold text-center">Welcome Back!</h1>
+          <p class="text-gray-100 font-normal text-center text-lg">
             Enter your personal details to use all of site features.
           </p>
           <button
             @click="toggle"
-            class="py-2 px-8 border rounded-lg text-sm hover:bg-white hover:text-indigo-500"
+            class="py-2 px-8 border rounded-lg text-lg hover:bg-white hover:text-indigo-500"
           >
             SIGN IN
           </button>
@@ -30,16 +33,16 @@
 
         <!-- Sign up blue container -->
         <div
-          v-if="!isSignup"
-          class="h-full w-1/2 bg-indigo-500 rounded-l-[120px] text-white flex flex-col items-center justify-center gap-4 absolute right-0"
+          id="signup-blue"
+          class="h-full w-1/2 bg-indigo-500 rounded-l-[120px] text-white flex flex-col items-center justify-center gap-4 absolute right-0 z-0 translate-x-[100%]"
         >
-          <h1 class="text-2xl font-bold text-center">Welcome Back!</h1>
-          <p class="text-gray-100 font-normal text-center text-sm">
-            Enter your personal details to use all of site features.
+          <h1 class="text-3xl font-bold text-center">Hello, Friend!</h1>
+          <p class="text-gray-100 font-normal text-center text-lg">
+            Register with your personal details to use all of site features.
           </p>
           <button
             @click="toggle"
-            class="py-2 px-8 border rounded-lg text-sm hover:bg-white hover:text-indigo-500"
+            class="py-2 px-8 border rounded-lg text-lg hover:bg-white hover:text-indigo-500"
           >
             SIGN UP
           </button>
@@ -47,49 +50,51 @@
 
         <!-- Sign up page -->
         <div
-          v-if="isSignup"
-          class="flex flex-col items-center justify-center gap-4 w-1/2 absolute right-0 my-4"
+          id="signup"
+          class="flex flex-col mx-auto justify-center gap-4 w-1/2 absolute right-0 z-10 top-5 md:top-[10%]"
         >
-          <h1 class="text-2xl font-bold text-center">Create Account</h1>
-          <nav class="flex gap-2">
+          <h1 class="text-3xl font-extrabold text-center">Create Account</h1>
+          <nav class="flex items-center justify-center gap-4 text-center">
             <a href="#"
-              ><GoogleIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
+              ><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
             /></a>
             <a href="#">
-              <FaceBookIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+              <FaceBookIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
             </a>
             <a href="#">
-              <GitHubIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+              <GitHubIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
             </a>
             <a href="#">
-              <LinkedinIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+              <LinkedinIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
             </a>
           </nav>
-          <p class="text-slate-600 font-normal text-sm pt-2">Or use your email for registration</p>
-          <form action="" method="post" class="text-center flex flex-col space-y-4">
+          <p class="text-slate-600 font-normal text-lg pt-2 text-center">
+            Or use your email for registration
+          </p>
+          <form action="" method="post" class="text-center flex flex-col space-y-4 px-12">
             <input
               type="text"
               placeholder="Name"
-              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+              class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Email"
-              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+              class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
             <input
               type="password"
               name="password"
               id="password"
               placeholder="Password"
-              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+              class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
           </form>
           <button
             type="submit"
-            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-sm"
+            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-lg mx-auto mt-2"
           >
             SIGN UP
           </button>
@@ -97,45 +102,47 @@
 
         <!-- Sign In page -->
         <div
-          v-if="!isSignup"
-          class="flex flex-col items-center justify-center gap-4 w-1/2 absolute left-0 my-4"
+          id="signin"
+          class="flex flex-col justify-center gap-6 w-1/2 absolute left-0 z-0 translate-x-[-100%] top-5 md:top-[10%]"
         >
-          <h1 class="text-2xl font-bold text-center">Sign In</h1>
-          <nav class="flex gap-2">
+          <h1 class="text-3xl font-extrabold text-center">Sign In</h1>
+          <nav class="flex gap-4 text-center mx-auto">
             <a href="#"
-              ><GoogleIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
+              ><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
             /></a>
             <a href="#">
-              <FaceBookIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+              <FaceBookIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
             </a>
             <a href="#">
-              <GitHubIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+              <GitHubIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
             </a>
             <a href="#">
-              <LinkedinIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+              <LinkedinIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
             </a>
           </nav>
-          <p class="text-slate-600 font-normal text-sm pt-2">Or use your email and password</p>
-          <form action="" method="post" class="text-center flex flex-col space-y-4">
+          <p class="text-slate-600 font-normal text-lg pt-2 text-center">
+            Or use your email and password
+          </p>
+          <form action="" method="post" class="text-center flex flex-col space-y-4 px-12">
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Email"
-              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+              class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
             <input
               type="password"
               name="password"
               id="password"
               placeholder="Password"
-              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+              class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
           </form>
-          <a href="#">Forget Your Password?</a>
+          <a href="#" class="text-center text-lg">Forget Your Password?</a>
           <button
             type="submit"
-            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-sm"
+            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-lg mx-auto"
           >
             SIGN IN
           </button>
@@ -152,9 +159,94 @@ import GitHubIcon from '@/components/icons/GitHub.vue'
 import LinkedinIcon from '@/components/icons/Linkedin.vue'
 import { ref } from 'vue'
 
-let isSignup = ref(true)
+const isSignup = ref(true)
 
 const toggle = () => {
   isSignup.value = !isSignup.value
 }
 </script>
+
+<!-- <style scoped>
+#signin,
+#signup,
+#signin-blue,
+#signup-blue {
+  transition:
+    transform 0.6s ease-in-out,
+    z-index 0.6s;
+}
+
+.active {
+  #signin {
+    z-index: 10;
+    transform: translateX(0%);
+  }
+  #signup {
+    z-index: 0;
+    transform: translateX(100%);
+  }
+  #signin-blue {
+    z-index: 0;
+    transform: translateX(-100%);
+  }
+  #signup-blue {
+    z-index: 10;
+    transform: translateX(0%);
+  }
+}
+</style> -->
+
+<style scoped>
+#signin,
+#signup,
+#signin-blue,
+#signup-blue {
+  transition:
+    transform 0.6s ease-in-out,
+    opacity 0.6s ease-in-out,
+    z-index 0.6s;
+}
+
+#signin-blue {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+#signup-blue {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#signup {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+#signin {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.active {
+  #signin {
+    z-index: 10;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  #signup {
+    z-index: 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  #signin-blue {
+    z-index: 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  #signup-blue {
+    z-index: 10;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+</style>
