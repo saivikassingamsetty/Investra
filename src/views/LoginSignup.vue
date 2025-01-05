@@ -9,8 +9,72 @@
         </svg>
       </div>
     </RouterLink>
-    <div class="max-w-3xl mx-auto bg-white">Hi</div>
+    <div class="container flex items-center justify-center h-full">
+      <div class="h-1/2 w-full bg-white m-6 max-w-2xl mx-auto rounded-3xl shadow-xl flex">
+        <div
+          class="h-full w-1/2 bg-indigo-500 rounded-r-[120px] text-white flex flex-col items-center justify-center gap-4"
+        >
+          <h1 class="text-2xl font-bold text-center">Welcome Back!</h1>
+          <p class="text-gray-100 font-normal text-center text-sm">
+            Enter your personal details to use all of site features.
+          </p>
+          <button class="py-2 px-8 border rounded-lg text-sm hover:bg-white hover:text-indigo-500">
+            SIGN IN
+          </button>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-4 w-1/2">
+          <h1 class="text-2xl font-bold text-center">Create Account</h1>
+          <nav class="flex gap-2">
+            <a href="#"
+              ><GoogleIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
+            /></a>
+            <a href="#">
+              <FaceBookIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+            </a>
+            <a href="#">
+              <GitHubIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+            </a>
+            <a href="#">
+              <LinkedinIcon class="h-10 w-10 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
+            </a>
+          </nav>
+          <p class="text-slate-600 font-normal text-sm pt-2">Or use your email for registration</p>
+          <form action="" method="post" class="text-center flex flex-col space-y-4">
+            <input
+              type="text"
+              placeholder="Name"
+              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              class="bg-slate-200 px-4 py-1 border-lg rounded-lg"
+            />
+          </form>
+          <button
+            type="submit"
+            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-sm"
+          >
+            SIGN UP
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import GoogleIcon from '@/components/icons/Google.vue'
+import FaceBookIcon from '@/components/icons/FaceBook.vue'
+import GitHubIcon from '@/components/icons/GitHub.vue'
+import LinkedinIcon from '@/components/icons/Linkedin.vue'
+</script>
