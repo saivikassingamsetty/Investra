@@ -12,7 +12,7 @@
     <div class="container flex items-center justify-center h-full relative overflow-hidden mx-auto">
       <div
         :class="{ active: !isSignup }"
-        class="h-3/5 w-full bg-white m-6 max-w-4xl mx-auto rounded-3xl shadow-xl flex absolute overflow-hidden"
+        class="h-4/5 w-full bg-white m-6 max-w-4xl mx-auto rounded-3xl shadow-xl flex absolute overflow-hidden"
       >
         <!-- Sign In blue container -->
         <div
@@ -71,33 +71,41 @@
           <p class="text-slate-600 font-normal text-lg pt-2 text-center">
             Or use your email for registration
           </p>
-          <form action="" method="post" class="text-center flex flex-col space-y-4 px-12">
-            <input
+          <Form
+            @submit="onSubmit"
+            :validationSchema="isSignup ? signupSchema : signinSchema"
+            class="text-center flex flex-col space-y-4 px-12"
+          >
+            <Field
+              name="name"
               type="text"
               placeholder="Name"
               class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
-            <input
+            <ErrorMessage name="name" class="text-red-500" />
+            <Field
               type="email"
               name="email"
               id="email"
               placeholder="Email"
               class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
-            <input
+            <ErrorMessage name="email" class="text-red-500" />
+            <Field
               type="password"
               name="password"
               id="password"
               placeholder="Password"
               class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
-          </form>
-          <button
-            type="submit"
-            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-lg mx-auto mt-2"
-          >
-            SIGN UP
-          </button>
+            <ErrorMessage name="password" class="text-red-500" />
+            <button
+              type="submit"
+              class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-lg mx-auto mt-2"
+            >
+              SIGN UP
+            </button>
+          </Form>
         </div>
 
         <!-- Sign In page -->
@@ -123,29 +131,35 @@
           <p class="text-slate-600 font-normal text-lg pt-2 text-center">
             Or use your email and password
           </p>
-          <form action="" method="post" class="text-center flex flex-col space-y-4 px-12">
-            <input
+          <Form
+            @submit="onSubmit"
+            :validationSchema="isSignup ? signupSchema : signinSchema"
+            class="text-center flex flex-col space-y-4 px-12"
+          >
+            <Field
               type="email"
               name="email"
               id="email"
               placeholder="Email"
               class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
-            <input
+            <ErrorMessage name="email" class="text-red-500" />
+            <Field
               type="password"
               name="password"
               id="password"
               placeholder="Password"
               class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
             />
-          </form>
-          <a href="#" class="text-center text-lg">Forget Your Password?</a>
-          <button
-            type="submit"
-            class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-lg mx-auto"
-          >
-            SIGN IN
-          </button>
+            <ErrorMessage name="password" class="text-red-500" />
+            <a href="#" class="text-center text-lg">Forget Your Password?</a>
+            <button
+              type="submit"
+              class="bg-indigo-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 font-normal text-lg mx-auto"
+            >
+              SIGN IN
+            </button>
+          </Form>
         </div>
       </div>
     </div>
@@ -158,11 +172,51 @@ import FaceBookIcon from '@/components/icons/FaceBook.vue'
 import GitHubIcon from '@/components/icons/GitHub.vue'
 import LinkedinIcon from '@/components/icons/Linkedin.vue'
 import { ref } from 'vue'
+import { Field, Form, ErrorMessage } from 'vee-validate'
+import type { RuleExpression } from 'vee-validate'
+import { object, string } from 'yup'
 
 const isSignup = ref(true)
 
 const toggle = () => {
   isSignup.value = !isSignup.value
+}
+
+//field level validation
+const validateEmail = (value: string): RuleExpression<unknown> => {
+  // if the field is empty
+  if (!value) {
+    return 'This field is required'
+  }
+  // if the field is not a valid email
+  const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  if (!regex.test(value)) {
+    return 'This field must be a valid email'
+  }
+  // All is good
+  return true
+}
+
+//form level validation
+const signupSchema = object({
+  name: string().required('Name is required'),
+  email: string().required('Email is required').email('Invalid email address'),
+  password: string()
+    .required('Password is required')
+    .min(8, 'Password must be at least 8 characters'),
+})
+
+const signinSchema = object({
+  email: string().required('Email is required').email('Invalid email address'),
+  password: string().required('Password is required'),
+})
+
+const onSubmit = (values: object) => {
+  if (isSignup.value) {
+    console.log('Sign Up:', values) // Handle sign-up logic
+  } else {
+    console.log('Sign In:', values) // Handle sign-in logic
+  }
 }
 </script>
 
