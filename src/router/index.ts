@@ -27,12 +27,23 @@ const router = createRouter({
   ],
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
   const auth = useAuthStore(pinia)
   const { isAuthenticated } = storeToRefs(auth)
 
-  if (!isAuthenticated.value && to.name != 'login') {
-    next({ name: 'login' })
+  // Redirect authenticated users away from login or signup pages
+  if (to.name === 'login' && isAuthenticated.value) {
+    return { name: 'dashboard' }
+  }
+
+  // Allow access to the home page even if not authenticated
+  if (to.name === 'home') {
+    return true
+  }
+
+  // Redirect unauthenticated users to login page for protected routes
+  if (!isAuthenticated.value && to.name !== 'login') {
+    return { name: 'login' }
   }
 })
 
