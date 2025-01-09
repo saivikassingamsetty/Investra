@@ -3,10 +3,19 @@ import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('auth', () => {
   const isSignup = ref(true)
+  const isAuthenticated = ref(false)
 
   const toggleSigninSignup = () => {
     isSignup.value = !isSignup.value
   }
 
-  return { isSignup, toggleSigninSignup }
+  const loginUser = () => {
+    isAuthenticated.value = true
+  }
+
+  const logoutUser = () => {
+    isAuthenticated.value = false
+  }
+
+  return { isSignup, isAuthenticated, toggleSigninSignup, loginUser, logoutUser }
 })

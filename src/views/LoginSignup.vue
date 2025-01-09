@@ -25,20 +25,49 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
+import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth/authStore'
 import SignInToggleContainer from '@/features/auth/components/SignInToggleContainer.vue'
 import SignupToggleContainer from '@/features/auth/components/SignupToggleContainer.vue'
 import SignIn from '@/features/auth/components/SignIn.vue'
 import Signup from '@/features/auth/components/Signup.vue'
+import { loginMockAPI, type IUserData } from '@/features/auth/mocks/mockAuthAPI'
+import { signupMockAPI } from '@/features/auth/mocks/mockAuthAPI'
 
 const auth = useAuthStore()
-const { isSignup } = storeToRefs(auth)
+const { isSignup, isAuthenticated } = storeToRefs(auth)
 
-const onSubmit = (values: object) => {
+const router = useRouter()
+
+const onSubmit = (values: IUserData) => {
   if (isSignup.value) {
-    console.log('Sign Up:', values) // Handle sign-up logic
+    handleSignup(values)
   } else {
-    console.log('Sign In:', values) // Handle sign-in logic
+    handleLogin(values)
+  }
+}
+
+const handleSignup = async (values: IUserData) => {
+  try {
+    const response = await signupMockAPI(values)
+    alert(response)
+    //redirect the user to /dashboard view
+    auth.loginUser()
+    router.push('/dashboard')
+  } catch (error: any) {
+    alert(error)
+  }
+}
+
+const handleLogin = async (values: IUserData) => {
+  try {
+    const response = await loginMockAPI(values)
+    alert(response)
+    //redirect the user to /dashboard view
+    auth.loginUser()
+    router.push('/dashboard')
+  } catch (error: any) {
+    alert(error)
   }
 }
 </script>
