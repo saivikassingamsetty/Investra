@@ -31,5 +31,5 @@
 </template>
 
 <script setup lang="ts">
-import HeroBoy from '../icons/HeroBoy.vue'
+import HeroBoy from '../../assets/icons/HeroBoy.vue'
 </script>
