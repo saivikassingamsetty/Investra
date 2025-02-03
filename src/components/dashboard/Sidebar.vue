@@ -33,7 +33,7 @@
         :to="item.link"
         class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md"
       >
-        <FontAwesomeIcon :icon="item.icon" />
+        <FontAwesomeIcon :icon="item.icon" class="w-5 h-5" />
         <Transition name="fade">
           <p v-show="isOpen">{{ item.label }}</p>
         </Transition>
