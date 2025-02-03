@@ -54,8 +54,8 @@
 </template>
 
 <script setup lang="ts">
-import Energy from '@/components/icons/Energy.vue'
-import Guard from '@/components/icons/Guard.vue'
-import Graphs from '@/components/icons/Graphs.vue'
-import StayUpdated from '@/components/icons/StayUpdated.vue'
+import Energy from '@/assets/icons/Energy.vue'
+import Guard from '@/assets/icons/Guard.vue'
+import Graphs from '@/assets/icons/Graphs.vue'
+import StayUpdated from '@/assets/icons/StayUpdated.vue'
 </script>
