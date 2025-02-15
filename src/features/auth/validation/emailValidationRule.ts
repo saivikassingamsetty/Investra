@@ -1,7 +1,6 @@
-import type { RuleExpression } from 'vee-validate'
-
 //field level validation
-export const validateEmail = (value: string): RuleExpression<unknown> => {
+// returns RuleExpression type from vee-validate
+export const validateEmail = (value: string): any => {
   // if the field is empty
   if (!value) {
     return 'This field is required'

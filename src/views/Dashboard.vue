@@ -1,12 +1,11 @@
 <template>
-  <Header />
-  <div
-    class="bg-gradient-to-br from-blue-400 to-indigo-400 h-lvh flex justify-center items-center text-3xl font-extrabold italic text-slate-200"
-  >
-    Welcome To Your Dashboard
+  <div class="flex flex-row">
+    <Sidebar class="transition-all duration-500" />
+    <DashboardContent class="flex-1 transition-all duration-500" />
   </div>
 </template>
 
 <script setup lang="ts">
-import Header from '../components/dashboard/Header.vue'
+import Sidebar from '../components/dashboard/Sidebar.vue'
+import DashboardContent from '../components/dashboard/DashboardContent.vue'
 </script>

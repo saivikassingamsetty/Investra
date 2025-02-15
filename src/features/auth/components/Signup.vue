@@ -60,10 +60,10 @@
 
 <script setup lang="ts">
 import { Field, Form, ErrorMessage } from 'vee-validate'
-import GoogleIcon from '../../../components/icons/Google.vue'
-import FaceBookIcon from '../../../components/icons/FaceBook.vue'
-import GitHubIcon from '../../../components/icons/GitHub.vue'
-import LinkedinIcon from '../../../components/icons/Linkedin.vue'
+import GoogleIcon from '../../../assets/icons/Google.vue'
+import FaceBookIcon from '../../../assets/icons/FaceBook.vue'
+import GitHubIcon from '../../../assets/icons/GitHub.vue'
+import LinkedinIcon from '../../../assets/icons/Linkedin.vue'
 import { signupSchema } from '../validation/signupSchema'
 
 const emit = defineEmits(['submit'])
