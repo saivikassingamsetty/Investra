@@ -1,13 +1,13 @@
 <template>
   <section
     class="p-5 flex flex-col justify-between bg-blue-200 transition-all duration-500"
-    :class="isOpen ? 'w-56' : 'w-20'"
+    :class="isSidebarOpen ? 'w-56' : 'w-20'"
   >
     <div class="flex items-center">
       <a href="/" class="flex items-center gap-2">
         <Investra class="w-10 h-10" />
         <Transition name="fade">
-          <h1 v-show="isOpen" class="text-2xl font-bold">Investra</h1>
+          <h1 v-show="isSidebarOpen" class="text-2xl font-bold">Investra</h1>
         </Transition>
       </a>
     </div>
@@ -21,7 +21,7 @@
       >
         <FontAwesomeIcon :icon="item.icon" class="w-5 h-5" />
         <Transition name="fade">
-          <p v-show="isOpen">{{ item.label }}</p>
+          <p v-show="isSidebarOpen">{{ item.label }}</p>
         </Transition>
       </RouterLink>
     </div>
@@ -35,7 +35,7 @@
       >
         <FontAwesomeIcon :icon="item.icon" class="w-5 h-5" />
         <Transition name="fade">
-          <p v-show="isOpen">{{ item.label }}</p>
+          <p v-show="isSidebarOpen">{{ item.label }}</p>
         </Transition>
       </RouterLink>
     </div>
@@ -44,15 +44,13 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { toRefs } from 'vue'
+import { onMounted, onBeforeUnmount } from 'vue'
 import Investra from '@/assets/icons/Investra.vue'
+import { storeToRefs } from 'pinia'
+import { useDashboardStore } from '@/stores/dashboard/dashboardStore'
 
-interface IProps {
-  isOpen: boolean
-}
-
-const props = defineProps<IProps>()
-const { isOpen } = toRefs(props)
+const dashboardStore = useDashboardStore()
+const { isSidebarOpen } = storeToRefs(dashboardStore)
 
 const sidebarItemSource = [
   { icon: 'fa-chart-line', label: 'Dashboard', link: '/dashboard' },
@@ -64,6 +62,23 @@ const sidebarItemSource = [
   { icon: 'fa-cog', label: 'Settings', link: '/settings' },
   { icon: 'fa-arrow-right-from-bracket', label: 'Logout', link: '/logout' },
 ]
+
+const handleResize = () => {
+  if (window.innerWidth <= 768) {
+    isSidebarOpen.value = false
+  } else {
+    isSidebarOpen.value = true
+  }
+}
+
+onMounted(() => {
+  handleResize()
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+})
 </script>
 
 <style scoped>
