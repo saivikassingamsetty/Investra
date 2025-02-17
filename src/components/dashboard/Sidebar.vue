@@ -1,9 +1,10 @@
 <template>
   <section
-    class="p-5 flex flex-col justify-between bg-blue-200 transition-all duration-500"
+    class="h-full flex flex-col bg-blue-200 transition-all duration-500 ease-in-out"
     :class="isSidebarOpen ? 'w-56' : 'w-20'"
   >
-    <div class="flex items-center">
+    <!-- Logo Section -->
+    <div class="flex items-center p-5">
       <a href="/" class="flex items-center gap-2">
         <Investra class="w-10 h-10" />
         <Transition name="fade">
@@ -12,31 +13,18 @@
       </a>
     </div>
 
-    <div class="flex flex-col gap-4">
+    <!-- Navigation Section -->
+    <div class="flex-1 flex flex-col gap-4 p-4 overflow-hidden justify-center">
       <RouterLink
-        v-for="item in sidebarItemSource.slice(0, -2)"
+        v-for="item in sidebarItemSource"
         :key="item.label"
         :to="item.link"
-        class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md transition-all duration-500"
+        class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md transition duration-300"
       >
-        <FontAwesomeIcon :icon="item.icon" class="w-5 h-5" />
-        <Transition name="fade">
-          <p v-show="isSidebarOpen">{{ item.label }}</p>
-        </Transition>
-      </RouterLink>
-    </div>
-
-    <div class="flex flex-col gap-4">
-      <RouterLink
-        v-for="item in sidebarItemSource.slice(-2)"
-        :key="item.label"
-        :to="item.link"
-        class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md"
-      >
-        <FontAwesomeIcon :icon="item.icon" class="w-5 h-5" />
-        <Transition name="fade">
-          <p v-show="isSidebarOpen">{{ item.label }}</p>
-        </Transition>
+        <FontAwesomeIcon :icon="item.icon" class="w-6 h-6 min-w-[24px]" />
+        <span v-show="isSidebarOpen" class="ml-2 whitespace-nowrap transition-all duration-500">{{
+          item.label
+        }}</span>
       </RouterLink>
     </div>
   </section>
@@ -57,10 +45,6 @@ const sidebarItemSource = [
   { icon: 'fa-briefcase', label: 'Portfolio', link: '/portfolio' },
   { icon: 'fa-chart-pie', label: 'Portfolio Analysis', link: '/portfolio-analysis' },
   { icon: 'fa-globe', label: 'Market', link: '/market' },
-  { icon: 'fa-bell', label: 'Notifications', link: '/notifications' },
-  { icon: 'fa-user', label: 'Profile', link: '/profile' },
-  { icon: 'fa-cog', label: 'Settings', link: '/settings' },
-  { icon: 'fa-arrow-right-from-bracket', label: 'Logout', link: '/logout' },
 ]
 
 const handleResize = () => {

@@ -1,19 +1,77 @@
 <template>
-  <div class="m-5">
-    <button @click="toggleSidebar"><font-awesome-icon :icon="['fas', 'bars']" /></button>
-  </div>
-  <div class="h-lvh w-full flex justify-center items-center text-3xl font-extrabold italic">
-    Welcome To Your Dashboard
+  <div class="flex flex-wrap">
+    <div
+      class="flex-grow basis-52 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 'small' }}
+    </div>
+    <div
+      class="flex-grow basis-52 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 'small' }}
+    </div>
+    <div
+      class="flex-grow basis-52 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 'small' }}
+    </div>
+    <div
+      class="flex-grow basis-52 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 'small' }}
+    </div>
+    <div
+      class="flex-grow basis-full h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 'big' }}
+    </div>
+    <div
+      class="flex-grow basis-80 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-52 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+
+    <div
+      class="flex-grow basis-96 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-52 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-80 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-80 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-80 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-80 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
+    <div
+      class="flex-grow basis-80 h-52 bg-blue-200 m-5 rounded-lg flex justify-center items-center"
+    >
+      {{ 1 }}
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { useDashboardStore } from '@/stores/dashboard/dashboardStore'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-const dashboardStore = useDashboardStore()
-
-const toggleSidebar = () => {
-  dashboardStore.toggleSidebar()
-}
-</script>
+<script setup lang="ts"></script>
