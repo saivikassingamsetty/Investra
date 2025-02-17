@@ -1,6 +1,6 @@
 <template>
   <section
-    class="min-h-screen flex flex-col bg-blue-200 transition-all duration-500"
+    class="h-full flex flex-col bg-blue-200 transition-all duration-500 ease-in-out"
     :class="isSidebarOpen ? 'w-56' : 'w-20'"
   >
     <!-- Logo Section -->
@@ -14,17 +14,17 @@
     </div>
 
     <!-- Navigation Section -->
-    <div class="flex-1 flex flex-col justify-center gap-4 p-5">
+    <div class="flex-1 flex flex-col gap-4 p-4 overflow-hidden justify-center">
       <RouterLink
         v-for="item in sidebarItemSource"
         :key="item.label"
         :to="item.link"
-        class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md transition-all duration-500"
+        class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md transition duration-300"
       >
-        <FontAwesomeIcon :icon="item.icon" class="w-5 h-5" />
-        <Transition name="fade">
-          <p v-show="isSidebarOpen">{{ item.label }}</p>
-        </Transition>
+        <FontAwesomeIcon :icon="item.icon" class="w-6 h-6 min-w-[24px]" />
+        <span v-show="isSidebarOpen" class="ml-2 whitespace-nowrap transition-all duration-500">{{
+          item.label
+        }}</span>
       </RouterLink>
     </div>
   </section>

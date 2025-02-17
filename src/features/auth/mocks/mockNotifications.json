@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Stock Alert: Tesla up 5%",
+    "message": "Tesla (TSLA) has surged by 5% in the last hour. Check your portfolio for updates.",
+    "type": "market",
+    "isRead": false,
+    "timestamp": "2025-02-17T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Dividend Received",
+    "message": "You have received ₹500 as a dividend from Infosys (INFY).",
+    "type": "transaction",
+    "isRead": false,
+    "timestamp": "2025-02-17T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Milestone Achieved!",
+    "message": "Your portfolio value has crossed ₹10,00,000. Keep up the great work!",
+    "type": "achievement",
+    "isRead": true,
+    "timestamp": "2025-02-16T18:45:00Z"
+  },
+  {
+    "id": 4,
+    "title": "New Feature Update",
+    "message": "We’ve introduced a new ‘Auto Invest’ feature. Try it now!",
+    "type": "update",
+    "isRead": false,
+    "timestamp": "2025-02-16T15:30:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Stock Alert: Nifty 50 Down 2%",
+    "message": "The Nifty 50 index is down 2% today. Consider reviewing your holdings.",
+    "type": "market",
+    "isRead": true,
+    "timestamp": "2025-02-15T11:00:00Z"
+  }
+]
