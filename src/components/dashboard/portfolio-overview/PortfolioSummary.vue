@@ -23,31 +23,31 @@
       <!-- Total Invested Value -->
       <div class="bg-white p-6 rounded-xl shadow-md w-full md:w-auto md:flex-1">
         <h2 class="text-gray-700 text-lg">Invested Value</h2>
-        <p class="text-3xl font-bold mt-2">₹{{ totalInvestedValue }}</p>
+        <p class="text-3xl font-semibold mt-2">₹{{ totalInvestedValue }}</p>
       </div>
 
       <!-- Total Portfolio Value -->
       <div class="bg-white p-6 rounded-xl shadow-md w-full md:w-auto md:flex-1">
         <h2 class="text-gray-700 text-lg">Portfolio Value</h2>
-        <p class="text-3xl font-bold mt-2 text-green-600">₹{{ totalPortfolioValue }}</p>
+        <p class="text-3xl font-semibold mt-2 text-green-600">₹{{ totalPortfolioValue }}</p>
       </div>
 
       <!-- Daily Change -->
       <div class="bg-white p-6 rounded-xl shadow-md w-full md:w-auto md:flex-1">
         <h2 class="text-gray-700 text-lg">Daily Change</h2>
-        <p class="text-3xl font-bold mt-2 text-green-600">+{{ dailyChange }}%</p>
+        <p class="text-3xl font-semibold mt-2 text-green-600">+{{ dailyChange }}%</p>
       </div>
 
       <!-- Total Returns -->
       <div class="bg-white p-6 rounded-xl shadow-md w-full md:w-auto md:flex-1">
         <h2 class="text-gray-700 text-lg">Total Returns</h2>
-        <p class="text-3xl font-bold mt-2 text-green-600">₹{{ totalReturns }}</p>
+        <p class="text-3xl font-semibold mt-2 text-green-600">₹{{ totalReturns }}</p>
       </div>
 
       <!-- XIRR -->
       <div class="bg-white p-6 rounded-xl shadow-md w-full md:w-auto md:flex-1">
         <h2 class="text-gray-700 text-lg">XIRR</h2>
-        <p class="text-3xl font-bold mt-2">+{{ totalReturnsPercentage }}%</p>
+        <p class="text-3xl font-semibold mt-2">+{{ totalReturnsPercentage }}%</p>
       </div>
     </div>
   </div>
