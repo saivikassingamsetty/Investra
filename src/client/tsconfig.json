@@ -1,0 +1,17 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tsbuildinfo",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "outDir": "dist", // Directory for the compiled JavaScript output
+    "rootDir": "./", // Base directory for input files
+    "sourceMap": true, // Include source maps for debugging
+    "declaration": true, // Generate type declarations (.d.ts files)
+    "declarationDir": "dist/types", // Directory for storing .d.ts files
+    "strict": true // Enable strict type checking
+  },
+  "include": ["env.d.ts", "./**/*.ts", "./**/*.vue"], // Include TypeScript and Vue files
+  "exclude": ["./**/__tests__/*", "dist", "node_modules"] // Exclude test directories and build outputs
+}
