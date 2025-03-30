@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["node"],
-    "target": "ESNext",
-    "rootDir": "./",
-    "outDir": "../dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "outDir": "dist", // Specifies the directory where output files should be placed
+    "rootDir": "./", // Specifies the root directory of input files
+    "module": "NodeNext", // Uses ECMAScript modules with Node.js compatibility
+    "moduleResolution": "nodenext", // Resolves modules in a manner consistent with Node.js's ECMAScript module resolution
+    "types": ["node"], // Includes Node.js type definitions
+    "sourceMap": true, // Generates source maps for debugging
+    "target": "ESNext", // Compiles to the latest ECMAScript standards
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "strict": true, // Enables all strict type-checking options
+    "esModuleInterop": true, // Enables compatibility with CommonJS modules
+    "skipLibCheck": true, // Skips type checks for library declaration files, speeding up compilation
+    "forceConsistentCasingInFileNames": true, // Ensures case sensitivity consistency in imports
+    "emitDeclarationOnly": false, // Allows emitting both JavaScript and declaration files
+    "declaration": true, // Generates declaration files to describe exported items
+    "declarationDir": "dist/types" // Specifies the directory for generated .d.ts files
+  },
+  "include": ["./**/*.ts"], // Includes all TypeScript files for compilation
+  "exclude": ["dist", "node_modules"] // Excludes already compiled output and third-party modules
 }
