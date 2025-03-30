@@ -12,4 +12,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './'),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'vue-router', 'pinia'], // Example of shared libraries
+          echarts: ['echarts'], // Separate large libraries
+        },
+      },
+    },
+  },
 })
