@@ -3,55 +3,32 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "src/client",
+    "src/server"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build",
+    "dev": "concurrently \"yarn --cwd src/client dev\" \"yarn --cwd src/server dev\"",
+    "build": "npm-run-all2 build-client build-server",
+    "build-client": "yarn --cwd src/client build",
+    "build-server": "yarn --cwd src/server build",
+    "preview": "yarn --cwd src/client preview",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
     "format": "prettier --write src/",
-    "lint": "run-s format lint:eslint lint:oxlint"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/vue-fontawesome": "^3.0.8",
-    "@tailwindcss/vite": "^4.0.17",
-    "echarts": "^5.6.0",
-    "pinia": "^3.0.1",
-    "tailwindcss": "^4.0.17",
-    "vee-validate": "^4.15.0",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "yup": "^1.6.1"
+    "lint": "npm-run-all2 format lint:eslint lint:oxlint"
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.1",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.13.14",
-    "@types/vue": "^2.0.0",
-    "@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.5.0",
-    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "autoprefixer": "^10.4.21",
+    "concurrently": "^8.2.1",
     "eslint": "^9.23.0",
     "eslint-plugin-oxlint": "^0.16.3",
     "eslint-plugin-vue": "^10.0.0",
-    "jsdom": "^26.0.0",
     "npm-run-all2": "^7.0.2",
     "oxlint": "^0.16.3",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.3",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.3",
-    "vite-plugin-vue-devtools": "^7.7.2",
-    "vue-tsc": "^2.2.8"
+    "prettier": "^3.5.3"
   },
   "packageManager": "yarn@4.8.0"
 }

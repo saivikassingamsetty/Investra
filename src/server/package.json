@@ -1,0 +1,27 @@
+{
+  "name": "investra-server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec tsx server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^22.13.14",
+    "nodemon": "^3.0.3",
+    "tsx": "^4.9.3",
+    "typescript": "~5.8.2"
+  },
+  "packageManager": "yarn@4.8.0"
+}

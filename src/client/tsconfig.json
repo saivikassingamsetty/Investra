@@ -1,0 +1,11 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tsbuildinfo",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["env.d.ts", "./**/*.ts", "./**/*.vue"],
+  "exclude": ["./**/__tests__/*", "dist", "node_modules"]
+}
