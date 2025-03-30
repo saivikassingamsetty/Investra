@@ -23,8 +23,5 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Build Client
-        run: yarn workspace client build
-
-      - name: Build Server
-        run: yarn workspace server build
+      - name: Build
+        run: yarn workspace investra build
