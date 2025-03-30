@@ -1,0 +1,37 @@
+name: Deploy Preview
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build Client
+        run: yarn workspace client build
+
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel
+          DEPLOY_URL=$(vercel --token ${{ secrets.VERCEL_TOKEN }} --yes --scope=your-team-name --env NODE_ENV=production --build-env NODE_ENV=production --prod)
+          echo "Deployed Preview: $DEPLOY_URL"
+
+      - name: Comment on PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            🚀 Preview Deployed! Check it here: [$DEPLOY_URL]
