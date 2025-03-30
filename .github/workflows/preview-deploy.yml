@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to Vercel
         run: |
           npm install -g vercel
-          DEPLOY_URL=$(vercel --token ${{ secrets.VERCEL_TOKEN }} --yes --scope=your-team-name --env NODE_ENV=production --build-env NODE_ENV=production --prod)
+          DEPLOY_URL=$(vercel --token ${{ secrets.VERCEL_TOKEN }} --yes --env NODE_ENV=production --build-env NODE_ENV=production --prod)
           echo "Deployed Preview: $DEPLOY_URL"
 
       - name: Comment on PR
