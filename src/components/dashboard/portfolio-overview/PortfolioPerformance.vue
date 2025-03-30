@@ -7,15 +7,10 @@
 
 <script setup lang="ts">
 import * as echarts from 'echarts/core'
-import { LineChart } from 'echarts/charts'
-import {
-  TooltipComponent,
-  LegendComponent,
-  GridComponent,
-  DataZoomComponent,
-} from 'echarts/components'
-import { CanvasRenderer } from 'echarts/renderers'
-import { onMounted, ref, nextTick } from 'vue'
+import {LineChart} from 'echarts/charts'
+import {TooltipComponent, LegendComponent, GridComponent, DataZoomComponent, TitleComponent} from 'echarts/components'
+import {CanvasRenderer} from 'echarts/renderers'
+import {onMounted, ref, nextTick} from 'vue'
 
 echarts.use([
   LineChart,
@@ -23,6 +18,7 @@ echarts.use([
   LegendComponent,
   GridComponent,
   DataZoomComponent,
+  TitleComponent,
   CanvasRenderer,
 ])
 
@@ -80,7 +76,7 @@ const combinedOptions = {
       type: 'line',
       data: portfolioData,
       smooth: true,
-      lineStyle: { width: 2 },
+      lineStyle: {width: 2},
       emphasis: {
         focus: 'series',
       },
@@ -90,7 +86,7 @@ const combinedOptions = {
       type: 'line',
       data: benchmarkData,
       smooth: true,
-      lineStyle: { width: 2 },
+      lineStyle: {width: 2},
       emphasis: {
         focus: 'series',
       },

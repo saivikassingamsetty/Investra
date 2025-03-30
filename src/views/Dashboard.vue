@@ -14,10 +14,7 @@
     </div>
 
     <!-- Overlay when notifications panel is open -->
-    <div
-      v-if="isNotificationsPanelOpen"
-      class="w-full h-full bg-slate-300 opacity-30 absolute z-10 top-0 left-0"
-    ></div>
+    <div v-if="isNotificationsPanelOpen" class="w-full h-full bg-slate-300 opacity-30 absolute z-10 top-0 left-0"></div>
 
     <!-- Notifications Side Panel -->
     <transition name="slide">
@@ -31,12 +28,12 @@ import Sidebar from '../components/dashboard/Sidebar.vue'
 import DashboardContent from '../components/dashboard/DashboardContent.vue'
 import Toolbar from '../components/dashboard/Toolbar.vue'
 import NotificationsPanel from '../components/dashboard/NotificationsPanel.vue'
-import { useDashboardStore } from '@/stores/dashboard/dashboardStore'
-import { storeToRefs } from 'pinia'
+import {useDashboardStore} from '@/stores/dashboard/dashboardStore'
+import {storeToRefs} from 'pinia'
 
 const dashboardStore = useDashboardStore()
 
-const { isNotificationsPanelOpen } = storeToRefs(dashboardStore)
+const {isNotificationsPanelOpen} = storeToRefs(dashboardStore)
 </script>
 
 <style scoped>

@@ -14,11 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="{ id, stock, qty, price, total, date, type } in transactions"
-          :key="id"
-          class="border-b"
-        >
+        <tr v-for="{id, stock, qty, price, total, date, type} in transactions" :key="id" class="border-b">
           <td class="p-2" :class="type == 'BUY' ? 'text-green-600' : 'text-red-600'">{{ type }}</td>
           <td class="p-2">{{ stock }}</td>
           <td class="p-2">{{ qty }}</td>
@@ -32,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 const transactions = ref([
   {
@@ -44,8 +40,8 @@ const transactions = ref([
     total: 48000,
     date: '26 Feb 2025',
   },
-  { id: 1, type: 'BUY', stock: 'Skipper', qty: 10, price: 1200, total: 12000, date: '26 Feb 2025' },
-  { id: 1, type: 'BUY', stock: 'Exicom', qty: 10, price: 600, total: 6000, date: '26 Feb 2025' },
+  {id: 1, type: 'BUY', stock: 'Skipper', qty: 10, price: 1200, total: 12000, date: '26 Feb 2025'},
+  {id: 1, type: 'BUY', stock: 'Exicom', qty: 10, price: 600, total: 6000, date: '26 Feb 2025'},
   {
     id: 1,
     type: 'SELL',

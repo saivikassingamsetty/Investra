@@ -54,16 +54,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { ref } from 'vue'
+import {computed} from 'vue'
+import {ref} from 'vue'
 
 const timeframes = ref([
-  { id: 'oneDay', value: '1D' },
-  { id: 'oneWeek', value: '1W' },
-  { id: 'oneMonth', value: '1M' },
-  { id: 'oneYear', value: '1Y' },
-  { id: 'allTime', value: 'All Time' },
-  { id: 'custom', value: 'Custom' },
+  {id: 'oneDay', value: '1D'},
+  {id: 'oneWeek', value: '1W'},
+  {id: 'oneMonth', value: '1M'},
+  {id: 'oneYear', value: '1Y'},
+  {id: 'allTime', value: 'All Time'},
+  {id: 'custom', value: 'Custom'},
 ])
 
 const activeTimeframe = ref('oneDay')

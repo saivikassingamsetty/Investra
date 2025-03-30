@@ -1,12 +1,8 @@
 <template>
-  <div
-    class="flex flex-col justify-center gap-6 w-1/2 absolute left-0 z-0 translate-x-[-100%] top-5 md:top-[10%]"
-  >
+  <div class="flex flex-col justify-center gap-6 w-1/2 absolute left-0 z-0 translate-x-[-100%] top-5 md:top-[10%]">
     <h1 class="text-3xl font-extrabold text-center">Sign In</h1>
     <nav class="flex gap-4 text-center mx-auto">
-      <a href="#"
-        ><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
-      /></a>
+      <a href="#"><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" /></a>
       <a href="#">
         <FaceBookIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
       </a>
@@ -17,9 +13,7 @@
         <LinkedinIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
       </a>
     </nav>
-    <p class="text-slate-600 font-normal text-lg pt-2 text-center">
-      Or use your email and password
-    </p>
+    <p class="text-slate-600 font-normal text-lg pt-2 text-center">Or use your email and password</p>
     <Form
       @submit="emit('submit', $event)"
       :validationSchema="signinSchema"
@@ -53,12 +47,12 @@
 </template>
 
 <script setup lang="ts">
-import { Field, Form, ErrorMessage } from 'vee-validate'
+import {Field, Form, ErrorMessage} from 'vee-validate'
 import GoogleIcon from '../../../assets/icons/Google.vue'
 import FaceBookIcon from '../../../assets/icons/FaceBook.vue'
 import GitHubIcon from '../../../assets/icons/GitHub.vue'
 import LinkedinIcon from '../../../assets/icons/Linkedin.vue'
-import { signinSchema } from '../validation/signinSchema'
+import {signinSchema} from '../validation/signinSchema'
 
 const emit = defineEmits(['submit'])
 </script>

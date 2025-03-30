@@ -1,5 +1,5 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import {ref} from 'vue'
+import {defineStore} from 'pinia'
 
 export const useAuthStore = defineStore('auth', () => {
   const isSignup = ref(true)
@@ -17,5 +17,5 @@ export const useAuthStore = defineStore('auth', () => {
     isAuthenticated.value = false
   }
 
-  return { isSignup, isAuthenticated, toggleSigninSignup, loginUser, logoutUser }
+  return {isSignup, isAuthenticated, toggleSigninSignup, loginUser, logoutUser}
 })

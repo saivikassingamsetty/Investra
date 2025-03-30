@@ -1,12 +1,8 @@
 <template>
-  <div
-    class="flex flex-col mx-auto justify-center gap-4 w-1/2 absolute right-0 z-10 top-5 md:top-[10%]"
-  >
+  <div class="flex flex-col mx-auto justify-center gap-4 w-1/2 absolute right-0 z-10 top-5 md:top-[10%]">
     <h1 class="text-3xl font-extrabold text-center">Create Account</h1>
     <nav class="flex items-center justify-center gap-4 text-center">
-      <a href="#"
-        ><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg"
-      /></a>
+      <a href="#"><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" /></a>
       <a href="#">
         <FaceBookIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
       </a>
@@ -17,20 +13,13 @@
         <LinkedinIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" />
       </a>
     </nav>
-    <p class="text-slate-600 font-normal text-lg pt-2 text-center">
-      Or use your email for registration
-    </p>
+    <p class="text-slate-600 font-normal text-lg pt-2 text-center">Or use your email for registration</p>
     <Form
       @submit="emit('submit', $event)"
       :validationSchema="signupSchema"
       class="text-center flex flex-col space-y-4 px-12"
     >
-      <Field
-        name="name"
-        type="text"
-        placeholder="Name"
-        class="bg-slate-200 px-4 py-3 border-lg rounded-lg"
-      />
+      <Field name="name" type="text" placeholder="Name" class="bg-slate-200 px-4 py-3 border-lg rounded-lg" />
       <ErrorMessage name="name" class="text-red-500" />
       <Field
         type="email"
@@ -59,12 +48,12 @@
 </template>
 
 <script setup lang="ts">
-import { Field, Form, ErrorMessage } from 'vee-validate'
+import {Field, Form, ErrorMessage} from 'vee-validate'
 import GoogleIcon from '../../../assets/icons/Google.vue'
 import FaceBookIcon from '../../../assets/icons/FaceBook.vue'
 import GitHubIcon from '../../../assets/icons/GitHub.vue'
 import LinkedinIcon from '../../../assets/icons/Linkedin.vue'
-import { signupSchema } from '../validation/signupSchema'
+import {signupSchema} from '../validation/signupSchema'
 
 const emit = defineEmits(['submit'])
 </script>

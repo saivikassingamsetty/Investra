@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="m-5 border-gray-300 flex justify-between items-center bg-white p-2 rounded-lg shadow-md"
-  >
+  <div class="m-5 border-gray-300 flex justify-between items-center bg-white p-2 rounded-lg shadow-md">
     <!-- Sidebar Toggle Button -->
     <button class="focus:outline-none" @click="toggleSidebar">
       <font-awesome-icon :icon="['fas', 'bars']" class="w-5 h-5" />
@@ -50,6 +48,7 @@
               <li
                 class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 v-for="item in sidebarItemSource"
+                :key="item.label"
               >
                 <font-awesome-icon :icon="item.icon"></font-awesome-icon>
                 {{ item.label }}
@@ -63,13 +62,13 @@
 </template>
 
 <script setup lang="ts">
-import { useDashboardStore } from '@/stores/dashboard/dashboardStore'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
+import {useDashboardStore} from '@/stores/dashboard/dashboardStore'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {storeToRefs} from 'pinia'
+import {ref} from 'vue'
 
 const dashboardStore = useDashboardStore()
-const { notifications } = storeToRefs(dashboardStore)
+const {notifications} = storeToRefs(dashboardStore)
 
 const unreadNotificationsCount = ref(notifications.value.length)
 const isUserDropdownOpen = ref(false)
@@ -79,9 +78,9 @@ const toggleSidebar = () => {
 }
 
 const sidebarItemSource = [
-  { icon: 'fa-user', label: 'Profile' },
-  { icon: 'fa-cog', label: 'Settings' },
-  { icon: 'fa-arrow-right-from-bracket', label: 'Logout' },
+  {icon: 'fa-user', label: 'Profile'},
+  {icon: 'fa-cog', label: 'Settings'},
+  {icon: 'fa-arrow-right-from-bracket', label: 'Logout'},
 ]
 
 const searchText = ref('')

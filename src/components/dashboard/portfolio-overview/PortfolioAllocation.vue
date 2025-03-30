@@ -13,27 +13,25 @@ import {
   LegendComponent,
   type LegendComponentOption,
 } from 'echarts/components'
-import { PieChart, type PieSeriesOption } from 'echarts/charts'
-import { LabelLayout } from 'echarts/features'
-import { CanvasRenderer } from 'echarts/renderers'
-import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
+import {PieChart, type PieSeriesOption} from 'echarts/charts'
+import {LabelLayout} from 'echarts/features'
+import {CanvasRenderer} from 'echarts/renderers'
+import {onMounted, onBeforeUnmount, ref, nextTick} from 'vue'
 
 // Register the components
 echarts.use([TooltipComponent, LegendComponent, PieChart, CanvasRenderer, LabelLayout])
 
 const pieChart = ref(null)
 
-type EchartsOption = echarts.ComposeOption<
-  TooltipComponentOption | LegendComponentOption | PieSeriesOption
->
+type EchartsOption = echarts.ComposeOption<TooltipComponentOption | LegendComponentOption | PieSeriesOption>
 
 const originalData = [
-  { name: 'Stocks', value: 40 },
-  { name: 'Mutual Funds', value: 40 },
-  { name: 'Crypto', value: 5 },
-  { name: 'Bonds', value: 5 },
-  { name: 'Cash', value: 5 },
-  { name: 'FD', value: 5 },
+  {name: 'Stocks', value: 40},
+  {name: 'Mutual Funds', value: 40},
+  {name: 'Crypto', value: 5},
+  {name: 'Bonds', value: 5},
+  {name: 'Cash', value: 5},
+  {name: 'FD', value: 5},
 ]
 
 const allocationData = ref([...originalData])
@@ -73,46 +71,47 @@ const options: EchartsOption = {
   },
 }
 
+let currentResizeHandler: (() => void) | null = null
+
 const renderChart = () => {
   if (pieChart.value) {
     const myChart = echarts.init(pieChart.value)
     myChart.setOption(options)
 
-    //double click on any part, dive in!
     myChart.on('dblclick', 'series', (params: any) => {
       if (params.componentType == 'series' && params.seriesType == 'pie') {
-        console.log(`double clicked on ${params.name}`)
-
         if (params.name == 'Stocks') {
           allocationData.value = [
-            { name: 'International Stocks', value: 40 },
-            { name: 'Domestic Stocks', value: 60 },
+            {name: 'International Stocks', value: 40},
+            {name: 'Domestic Stocks', value: 60},
           ]
         } else if (params.name == 'Mutual Funds') {
           allocationData.value = [
-            { name: 'Equity Mutual Funds', value: 80 },
-            { name: 'Debt Mutual Funds', value: 20 },
+            {name: 'Equity Mutual Funds', value: 80},
+            {name: 'Debt Mutual Funds', value: 20},
           ]
         }
 
-        //set the chart with new data
         myChart.setOption({
-          series: [{ data: allocationData.value }],
+          series: [{data: allocationData.value}],
         })
       }
     })
 
-    //when click outside, move back;
     myChart.getZr().on('dblclick', (event: any) => {
       if (!event.target) {
         allocationData.value = originalData
         myChart.setOption({
-          series: [{ data: allocationData.value }],
+          series: [{data: allocationData.value}],
         })
       }
     })
 
-    window.addEventListener('resize', myChart.resize)
+    const resizeHandler = () => {
+      myChart.resize()
+    }
+    window.addEventListener('resize', resizeHandler)
+    currentResizeHandler = resizeHandler
   }
 }
 
@@ -123,6 +122,8 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', renderChart)
+  if (currentResizeHandler) {
+    window.removeEventListener('resize', currentResizeHandler)
+  }
 })
 </script>

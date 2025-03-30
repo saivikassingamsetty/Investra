@@ -8,11 +8,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:svgjs="http://svgjs.com/svgjs"
   >
-    <g
-      id="freepik--background-simple--inject-2"
-      class="animable"
-      style="transform-origin: 251.326px 245.544px"
-    >
+    <g id="freepik--background-simple--inject-2" class="animable" style="transform-origin: 251.326px 245.544px">
       <path
         d="M332.51,63.83c-21.82,12.48-37.21,33.47-55.86,50.32a179.7,179.7,0,0,1-81.92,42c-25,5.41-51.12,5.49-75.21,14-47,16.49-79.19,65.43-80,115.19s27.5,98,69.11,125.28a165.64,165.64,0,0,0,46,20.95c30.6,8.61,63.05,8.23,94.67,4.94,54.62-5.69,111.88-36.71,146.31-80.44a313.74,313.74,0,0,0,38.64-63.45,316.45,316.45,0,0,0,28.52-118.15c1.45-35,0-73.8-27.77-99.31S365.06,45.2,332.51,63.83Z"
         style="fill: rgb(37, 99, 235); transform-origin: 251.326px 245.544px"
@@ -1051,12 +1047,7 @@
       ></path>
       <path
         d="M303.5,198l.94,3.84-6.28,1.53-.94-3.83c-5.62,0-10.13-3.65-11.57-9.51l-.43-1.74,6.93-2.51.44,1.81c.87,3.56,3.22,5.27,6.15,4.55a4.5,4.5,0,0,0,3.59-5.83c-.84-3.42-4.76-5.56-9.3-7.77-5.37-2.6-10.91-5.9-12.43-12.11-1.48-6.06.38-11.11,5.17-13.61l-.94-3.84,6.27-1.53.94,3.83c5.45-.08,9.51,3.51,11,9.71l.31,1.26-6.92,2.51-.35-1.39c-.92-3.77-2.86-5.36-5.44-4.73s-3.65,2.6-2.9,5.66c.84,3.42,4.81,5.48,9.3,7.78,5.31,2.69,10.91,5.9,12.43,12.1C311,190.15,308.56,195.47,303.5,198Z"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 295.013px 175.41px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 295.013px 175.41px"
         id="elfb8qnzcrink"
         class="animable"
       ></path>
@@ -1210,12 +1201,7 @@
       ></path>
       <path
         d="M328.21,121.08l-.87,2.22-3.64-1.43.87-2.23a7.12,7.12,0,0,1-2.4-8.73l.4-1,4.3,1.17-.41,1.06c-.81,2.06-.26,3.72,1.44,4.39a2.72,2.72,0,0,0,3.81-1.63c.78-2-.41-4.41-1.88-7.08-1.74-3.16-3.32-6.72-1.91-10.32s4.07-5.36,7.3-4.92l.88-2.22,3.63,1.43L338.86,94c2.72,1.86,3.47,5,2.06,8.65l-.29.72-4.3-1.17.32-.81c.86-2.18.46-3.65-1-4.24s-2.71,0-3.41,1.79c-.78,2,.47,4.38,1.88,7.08,1.69,3.19,3.33,6.73,1.92,10.32A7.09,7.09,0,0,1,328.21,121.08Z"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 331.583px 106.83px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 331.583px 106.83px"
         id="ela5gruftstm"
         class="animable"
       ></path>
@@ -1241,11 +1227,7 @@
         ></path>
       </g>
     </g>
-    <g
-      id="freepik--Character--inject-2"
-      class="animable"
-      style="transform-origin: 259.872px 295.137px"
-    >
+    <g id="freepik--Character--inject-2" class="animable" style="transform-origin: 259.872px 295.137px">
       <path
         d="M336.58,399.76a132,132,0,0,1-32.84,28.35,116.06,116.06,0,0,1-12,6.26c-28.41,12.77-60.79,13.6-91.07,6.26C137,425.2,103.22,369,98.93,306.61c-1.15-16.86-3.73-35.07,3.1-51.11s20.64-26,36.26-32.92c11.34-5.05,23.59-8.44,34.72-11.21a89.31,89.31,0,0,1,60.09,6.2c13.09,6.21,22.41,17,33.42,26.09q1.75,1.44,3.52,2.87a329.9,329.9,0,0,0,35,24.61c18.51,11.29,37.46,21.94,49.29,40.9C373.2,342.26,357.28,375.16,336.58,399.76Z"
         style="fill: rgb(37, 99, 235); transform-origin: 230.114px 327.021px"
@@ -1261,12 +1243,7 @@
       </g>
       <path
         d="M270,246.53q-1.77-1.42-3.52-2.88c-11-9.11-20.34-19.87-33.42-26.08a89.37,89.37,0,0,0-60.09-6.2c-26.47,6.57-59.3,16.69-71,44.14-6.83,16-4.25,34.24-3.09,51.1C103.22,369,137,425.2,200.67,440.63c34.64,8.4,72,6.1,103.07-12.52a132,132,0,0,0,32.84-28.35c20.7-24.6,36.62-57.5,17.77-87.72-11.82-19-30.77-29.61-49.29-40.9A329.9,329.9,0,0,1,270,246.53Z"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 230.088px 327.023px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 230.088px 327.023px"
         id="elux9atspkiwm"
         class="animable"
       ></path>
@@ -1670,12 +1647,7 @@
       ></path>
       <path
         d="M350.78,402.37a149.82,149.82,0,0,1-20.78-24c-10.57-16.33-25.18-32-40.21-44.23-12.11-9.82-14.85-25.82-29.79-33.85-24.75-13.27-46.15,13.1-54.15,18.44S184,330.12,184,330.12s5.06,19,19.92,21.25,29.89-8,37-3.05,12.37,27.05,35.85,40c19.19,10.58,45.34,20.9,58.83,27.86,3,1.56,5.24,3.2,6.94,4.13,4.66,2.54,9.64,5.53,14.34,8.49l16.19,9.86s16.25-9.61,22.49-18.47c.83-1.19,2.56-4.36,4.18-7.42,3.53-6.69,8-12.69,14.19-16,4.28-2.31,8.09-3,8-3.24-.41-.76-8.17-4.73-13.44-2.56-11.16,4.61-33.47,22.32-44,21A78.83,78.83,0,0,1,350.78,402.37Z"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 302.966px 367.629px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 302.966px 367.629px"
         id="el2ahs5cx4ueq"
         class="animable"
       ></path>
@@ -1711,12 +1683,7 @@
       ></path>
       <path
         d="M353.71,426.82s13.56,1.11,10.38-15.09"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 359.142px 419.283px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 359.142px 419.283px"
         id="elb5g9a4x5hjk"
         class="animable"
       ></path>
@@ -1728,23 +1695,13 @@
       ></path>
       <path
         d="M412.28,390.33c-14.17,2.82-17.39,21-22.42,28.73s-19,18.24-19,18.24"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 391.57px 413.815px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 391.57px 413.815px"
         id="elhwozhs385p8"
         class="animable"
       ></path>
       <path
         d="M363.22,432.66c2.31,4.22,1.22,9.12,0,12.19a25.45,25.45,0,0,1-2.22,4.37c-20.06-3.3-40.12-14.08-40.12-14.08l-5.17-16-.83-2.56,7.79-10.49"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 339.727px 427.655px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 339.727px 427.655px"
         id="ele5c3ti1qa4s"
         class="animable"
       ></path>
@@ -1768,12 +1725,7 @@
       ></polyline>
       <path
         d="M364,419.06s8.94,1.6,15.81-4,17.94-18.27,17.94-18.27"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 380.875px 408.031px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 380.875px 408.031px"
         id="ellsgliw9uaho"
         class="animable"
       ></path>
@@ -1815,12 +1767,7 @@
       ></path>
       <path
         d="M324.44,404.74l-7.17,8.63s7.22,7.89,17.41,11.17,28.39,8.85,29.9,14.78"
-        style="
-          fill: none;
-          stroke: rgb(38, 50, 56);
-          stroke-miterlimit: 10;
-          transform-origin: 340.925px 422.03px;
-        "
+        style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 340.925px 422.03px"
         id="eleahi3mnj075"
         class="animable"
       ></path>

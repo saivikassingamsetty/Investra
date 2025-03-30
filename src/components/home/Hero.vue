@@ -1,15 +1,10 @@
 <template>
-  <section
-    id="hero"
-    class="flex flex-col md:flex-row items-center justify-center py-16 px-6 scroll-m-10"
-  >
+  <section id="hero" class="flex flex-col md:flex-row items-center justify-center py-16 px-6 scroll-m-10">
     <div class="text-center md:text-start">
-      <h1 class="font-extrabold text-4xl md:text-5xl leading-tight">
-        Your Investments, Simplified and Smart
-      </h1>
+      <h1 class="font-extrabold text-4xl md:text-5xl leading-tight">Your Investments, Simplified and Smart</h1>
       <p class="mt-4 text-slate-600 text-lg">
-        Unlock the power of AI to track your portfolio, gain actionable insights, and stay ahead in
-        your financial journey.
+        Unlock the power of AI to track your portfolio, gain actionable insights, and stay ahead in your financial
+        journey.
       </p>
       <div class="m-4 flex space-x-4 items-center justify-center md:justify-start">
         <a

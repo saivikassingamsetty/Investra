@@ -1,4 +1,4 @@
 [
-  { "email": "vikas@gmail.com", "password": "Sai@12345" },
-  { "email": "sai@gmail.com", "password": "Vikas@12345" }
+  {"email": "vikas@gmail.com", "password": "Sai@12345"},
+  {"email": "sai@gmail.com", "password": "Vikas@12345"}
 ]

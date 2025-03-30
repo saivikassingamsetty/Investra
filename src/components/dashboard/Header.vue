@@ -1,8 +1,5 @@
 <template>
-  <header
-    id="header"
-    class="sticky top-0 z-10 shadow-md flex justify-between py-4 pl-2 pr-6 bg-gray-50"
-  >
+  <header id="header" class="sticky top-0 z-10 shadow-md flex justify-between py-4 pl-2 pr-6 bg-gray-50">
     <section>
       <a href="#" class="flex my-auto">
         <img
@@ -11,9 +8,7 @@
           class="h-10 w-20 my-auto object-cover header-logo"
           draggable="false"
         />
-        <h1 class="text-2xl md:text-3xl text-blue-700 font-bold m-2 hidden min-[330px]:block">
-          Investra
-        </h1>
+        <h1 class="text-2xl md:text-3xl text-blue-700 font-bold m-2 hidden min-[330px]:block">Investra</h1>
       </a>
     </section>
     <section class="flex space-x-6">
@@ -28,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from '@/stores/auth/authStore'
-import { useRouter } from 'vue-router'
+import {useAuthStore} from '@/stores/auth/authStore'
+import {useRouter} from 'vue-router'
 
 const auth = useAuthStore()
 const router = useRouter()

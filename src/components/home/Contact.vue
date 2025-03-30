@@ -3,20 +3,14 @@
     <div class="text-center flex flex-col gap-4 mx-8">
       <h1 class="text-3xl font-extrabold">Get in Touch</h1>
       <p class="text-slate-600">
-        Have questions or need assistance? We'd love to hear from you. Reach out and we'll get back
-        to you shortly.
+        Have questions or need assistance? We'd love to hear from you. Reach out and we'll get back to you shortly.
       </p>
       <div class="bg-white p-6 text-start w-5/6 md:w-3/5 lg:w-1/2 mx-auto rounded-lg shadow-lg">
         <form action="" method="post" class="flex flex-col gap-2">
           <label for="name">Your Name</label>
           <input type="text" id="name" placeholder="John Doe" class="border rounded-lg p-2 mb-2" />
           <label for="email">Your Email</label>
-          <input
-            type="text"
-            id="email"
-            placeholder="you@example.com"
-            class="border rounded-lg p-2 mb-2"
-          />
+          <input type="text" id="email" placeholder="you@example.com" class="border rounded-lg p-2 mb-2" />
           <label for="message">Your Message</label>
           <textarea
             name=""
@@ -26,10 +20,7 @@
             placeholder="Write your message here..."
             class="border rounded-lg p-2 mb-2"
           ></textarea>
-          <button
-            type="submit"
-            class="bg-indigo-600 text-white py-3 mt-2 rounded-lg shadow-lg hover:bg-indigo-700"
-          >
+          <button type="submit" class="bg-indigo-600 text-white py-3 mt-2 rounded-lg shadow-lg hover:bg-indigo-700">
             Send Message
           </button>
         </form>
@@ -94,22 +85,10 @@
               alt="Slack Logo"
             >
               <title>Slack Logo SVG</title>
-              <path
-                d="M22,12 a6,6 0 1 1 6,-6 v6z M22,16 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
-                fill="#36C5F0"
-              />
-              <path
-                d="M48,22 a6,6 0 1 1 6,6 h-6z M32,6 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
-                fill="#2EB67D"
-              />
-              <path
-                d="M38,48 a6,6 0 1 1 -6,6 v-6z M54,32 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
-                fill="#ECB22E"
-              />
-              <path
-                d="M12,38 a6,6 0 1 1 -6,-6 h6z M16,38 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
-                fill="#E01E5A"
-              />
+              <path d="M22,12 a6,6 0 1 1 6,-6 v6z M22,16 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12" fill="#36C5F0" />
+              <path d="M48,22 a6,6 0 1 1 6,6 h-6z M32,6 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z" fill="#2EB67D" />
+              <path d="M38,48 a6,6 0 1 1 -6,6 v-6z M54,32 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12" fill="#ECB22E" />
+              <path d="M12,38 a6,6 0 1 1 -6,-6 h6z M16,38 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z" fill="#E01E5A" />
             </svg>
           </a>
         </div>

@@ -8,7 +8,7 @@ export interface IUserData {
 
 //Recieves the email and password and check for the user in our mock data, handle the promise accordingly
 export const loginMockAPI = (userData: IUserData) => {
-  const { email, password } = userData
+  const {email, password} = userData
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -28,7 +28,7 @@ export const loginMockAPI = (userData: IUserData) => {
 
 //Recieves the email and password and check for the user in our mock data, handle the promise accordingly
 export const signupMockAPI = (userData: IUserData) => {
-  const { email, password } = userData
+  const {email} = userData
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {

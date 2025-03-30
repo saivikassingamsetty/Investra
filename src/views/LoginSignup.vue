@@ -11,7 +11,7 @@
     </RouterLink>
     <div class="container flex items-center justify-center h-full relative overflow-hidden mx-auto">
       <div
-        :class="{ active: !isSignup }"
+        :class="{active: !isSignup}"
         class="h-4/5 w-full bg-white m-6 max-w-4xl mx-auto rounded-3xl shadow-xl flex absolute overflow-hidden"
       >
         <SignInToggleContainer id="signin-blue" />
@@ -24,18 +24,18 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import { useRouter } from 'vue-router'
-import { useAuthStore } from '@/stores/auth/authStore'
+import {storeToRefs} from 'pinia'
+import {useRouter} from 'vue-router'
+import {useAuthStore} from '@/stores/auth/authStore'
 import SignInToggleContainer from '@/features/auth/components/SignInToggleContainer.vue'
 import SignupToggleContainer from '@/features/auth/components/SignupToggleContainer.vue'
 import SignIn from '@/features/auth/components/SignIn.vue'
 import Signup from '@/features/auth/components/Signup.vue'
-import { loginMockAPI, type IUserData } from '@/features/auth/mocks/mockAuthAPI'
-import { signupMockAPI } from '@/features/auth/mocks/mockAuthAPI'
+import {loginMockAPI, type IUserData} from '@/features/auth/mocks/mockAuthAPI'
+import {signupMockAPI} from '@/features/auth/mocks/mockAuthAPI'
 
 const auth = useAuthStore()
-const { isSignup, isAuthenticated } = storeToRefs(auth)
+const {isSignup, isAuthenticated} = storeToRefs(auth)
 
 const router = useRouter()
 

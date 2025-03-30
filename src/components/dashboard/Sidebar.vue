@@ -22,29 +22,27 @@
         class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md transition duration-300"
       >
         <FontAwesomeIcon :icon="item.icon" class="w-6 h-6 min-w-[24px]" />
-        <span v-show="isSidebarOpen" class="ml-2 whitespace-nowrap transition-all duration-500">{{
-          item.label
-        }}</span>
+        <span v-show="isSidebarOpen" class="ml-2 whitespace-nowrap transition-all duration-500">{{ item.label }}</span>
       </RouterLink>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { onMounted, onBeforeUnmount } from 'vue'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {onMounted, onBeforeUnmount} from 'vue'
 import Investra from '@/assets/icons/Investra.vue'
-import { storeToRefs } from 'pinia'
-import { useDashboardStore } from '@/stores/dashboard/dashboardStore'
+import {storeToRefs} from 'pinia'
+import {useDashboardStore} from '@/stores/dashboard/dashboardStore'
 
 const dashboardStore = useDashboardStore()
-const { isSidebarOpen } = storeToRefs(dashboardStore)
+const {isSidebarOpen} = storeToRefs(dashboardStore)
 
 const sidebarItemSource = [
-  { icon: 'fa-chart-line', label: 'Dashboard', link: '/dashboard' },
-  { icon: 'fa-briefcase', label: 'Portfolio', link: '/portfolio' },
-  { icon: 'fa-chart-pie', label: 'Portfolio Analysis', link: '/portfolio-analysis' },
-  { icon: 'fa-globe', label: 'Market', link: '/market' },
+  {icon: 'fa-chart-line', label: 'Dashboard', link: '/dashboard'},
+  {icon: 'fa-briefcase', label: 'Portfolio', link: '/portfolio'},
+  {icon: 'fa-chart-pie', label: 'Portfolio Analysis', link: '/portfolio-analysis'},
+  {icon: 'fa-globe', label: 'Market', link: '/market'},
 ]
 
 const handleResize = () => {
