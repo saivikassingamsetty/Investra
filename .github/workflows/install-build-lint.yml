@@ -1,6 +1,9 @@
-name: Install, Build, and Lint
+name: Build, and Lint
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -16,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ^22
           cache: 'yarn'
 
       - name: Cache node_modules
@@ -53,7 +56,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ^22
           cache: 'yarn'
 
       - name: Build Client & Server
@@ -79,7 +82,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ^22
           cache: 'yarn'
 
       - name: Lint Code

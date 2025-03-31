@@ -10,17 +10,17 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.13.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
-    "@types/jsonwebtoken": "^9.0.2",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.13.14",
-    "nodemon": "^3.0.3",
-    "tsx": "^4.9.3",
+    "nodemon": "^3.1.9",
+    "tsx": "^4.19.3",
     "typescript": "~5.8.2"
   },
   "packageManager": "yarn@4.8.0"
