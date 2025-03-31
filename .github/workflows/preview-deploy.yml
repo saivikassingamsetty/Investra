@@ -1,0 +1,46 @@
+name: Deploy Preview
+
+on:
+  workflow_dispatch:
+  # pull_request:
+  #   branches:
+  #     - main
+
+permissions:
+  pull-requests: write
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build Client
+        run: yarn workspace investra-client build
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel
+        id: vercel_deploy
+        run: |
+          DEPLOY_URL=$(vercel --token ${{ secrets.VERCEL_TOKEN }} --yes --env NODE_ENV=production --build-env NODE_ENV=production --confirm --name investra-client)
+          echo "Deployed Preview URL: $DEPLOY_URL"
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+
+      - name: Comment on PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            🚀 Preview Deployed! Check it here: [${{ env.DEPLOY_URL }}]
