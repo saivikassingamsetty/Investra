@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  install:
+  setup:
+    name: Setup Environment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -18,15 +19,36 @@ jobs:
           node-version: 20
           cache: 'yarn'
 
+      - name: Cache node_modules
+        id: yarn-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
+
       - name: Install Dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --immutable
 
   build:
-    needs: install
+    name: Build Client & Server
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,11 +60,21 @@ jobs:
         run: yarn build
 
   lint:
-    needs: install
+    name: Lint Code
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
