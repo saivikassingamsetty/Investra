@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
+          cache: 'yarn'
 
       - name: Install Dependencies
         run: yarn install --immutable
@@ -24,14 +24,18 @@ jobs:
       - name: Build Client
         run: yarn workspace investra-client build
 
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
       - name: Deploy to Vercel
+        id: vercel_deploy
         run: |
-          npm install -g vercel
-          DEPLOY_URL=$(vercel --token ${{ secrets.VERCEL_TOKEN }} --yes --env NODE_ENV=production --build-env NODE_ENV=production --prod)
-          echo "Deployed Preview: $DEPLOY_URL"
+          DEPLOY_URL=$(vercel --token ${{ secrets.VERCEL_TOKEN }} --yes --env NODE_ENV=production --build-env NODE_ENV=production --confirm --name investra-client)
+          echo "Deployed Preview URL: $DEPLOY_URL"
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
 
       - name: Comment on PR
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            🚀 Preview Deployed! Check it here: [$DEPLOY_URL]
+            🚀 Preview Deployed! Check it here: [${{ env.DEPLOY_URL }}]
