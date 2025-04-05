@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-12 gap-4 p-6">
+  <div class="grid grid-cols-12 gap-4 p-6 rounded-xl shadow-lg">
     <!-- Portfolio Summary -->
     <div class="col-span-12 bg-white p-6 rounded-xl shadow-lg">
       <PortfolioSummary />
@@ -20,6 +20,18 @@
     <div class="col-span-8 bg-white p-6 rounded-xl shadow-lg">
       <RecentTransactions />
     </div>
+    <!-- Sector Wise Distribution -->
+    <div class="col-span-4 bg-white p-6 rounded-xl shadow-lg">
+      <SectorWiseDistribution />
+    </div>
+    <!-- Risk Assessmnet -->
+    <div class="col-span-4 bg-white p-6 rounded-xl shadow-lg">
+      <RiskAssessment />
+    </div>
+    <!-- Scenario Simulator -->
+    <div class="col-span-4 bg-white p-6 rounded-xl shadow-lg">
+      <ScenarioSimulator />
+    </div>
   </div>
 </template>
 
@@ -29,4 +41,7 @@ import PortfolioAllocation from './portfolio-overview/PortfolioAllocation.vue'
 import PortfolioPerformance from './portfolio-overview/PortfolioPerformance.vue'
 import GainersLosers from './portfolio-overview/GainersLosers.vue'
 import RecentTransactions from './portfolio-overview/RecentTransactions.vue'
+import SectorWiseDistribution from './portfolio-overview/SectorWiseDistribution.vue'
+import RiskAssessment from './portfolio-overview/RiskAssessment.vue'
+import ScenarioSimulator from './portfolio-overview/ScenarioSimulator.vue'
 </script>

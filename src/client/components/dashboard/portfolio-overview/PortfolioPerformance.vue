@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">Portfolio Performance</h2>
     <div ref="combinedChart" class="width-full" style="height: 400px"></div>
   </div>
 </template>
@@ -8,7 +7,14 @@
 <script setup lang="ts">
 import * as echarts from 'echarts/core'
 import {LineChart} from 'echarts/charts'
-import {TooltipComponent, LegendComponent, GridComponent, DataZoomComponent, TitleComponent} from 'echarts/components'
+import {
+  TooltipComponent,
+  LegendComponent,
+  GridComponent,
+  DataZoomComponent,
+  TitleComponent,
+  ToolboxComponent,
+} from 'echarts/components'
 import {CanvasRenderer} from 'echarts/renderers'
 import {onMounted, ref, nextTick} from 'vue'
 
@@ -19,6 +25,7 @@ echarts.use([
   GridComponent,
   DataZoomComponent,
   TitleComponent,
+  ToolboxComponent,
   CanvasRenderer,
 ])
 
@@ -31,7 +38,8 @@ const timeLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
 
 const combinedOptions = {
   title: {
-    text: 'Portfolio vs. Benchmark Performance',
+    text: 'Portfolio Performance',
+    subtext: 'Portfolio vs. Benchmark Performance',
     left: 'center',
   },
   tooltip: {
@@ -41,6 +49,12 @@ const combinedOptions = {
     data: ['Portfolio', 'Benchmark'],
     bottom: 0,
     left: 'center',
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      restore: {show: true},
+    },
   },
   grid: {
     left: '3%',

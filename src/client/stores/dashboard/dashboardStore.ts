@@ -3,7 +3,7 @@ import {reactive, ref} from 'vue'
 import mockNotifications from '@/features/auth/mocks/mockNotifications.json'
 
 export const useDashboardStore = defineStore('dashboard', () => {
-  const isSidebarOpen = ref(true)
+  const isSidebarOpen = ref(false)
   const isNotificationsPanelOpen = ref(false)
   const notifications = reactive(mockNotifications)
 
