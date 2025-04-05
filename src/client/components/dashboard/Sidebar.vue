@@ -49,7 +49,7 @@ const handleResize = () => {
   if (window.innerWidth <= 768) {
     isSidebarOpen.value = false
   } else {
-    isSidebarOpen.value = true
+    // isSidebarOpen.value = true
   }
 }
 
