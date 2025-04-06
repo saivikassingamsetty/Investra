@@ -1,12 +1,12 @@
 <template>
   <section
-    class="h-full flex flex-col bg-blue-200 transition-all duration-500 ease-in-out"
-    :class="isSidebarOpen ? 'w-56' : 'w-20'"
+    class="h-full flex flex-col bg-blue-200 transition-all duration-500 ease-in-out relative"
+    :class="isSidebarOpen ? 'w-56' : 'w-16'"
   >
     <!-- Logo Section -->
     <div class="flex items-center p-5">
       <a href="/" class="flex items-center gap-2">
-        <Investra class="w-10 h-10" />
+        <Investra class="w-8 h-8" />
         <Transition name="fade">
           <h1 v-show="isSidebarOpen" class="text-2xl font-bold">Investra</h1>
         </Transition>
@@ -19,7 +19,7 @@
         v-for="item in sidebarItemSource"
         :key="item.label"
         :to="item.link"
-        class="flex items-center gap-2 p-2 hover:bg-blue-300 rounded-md transition duration-300"
+        class="flex items-center justify-center gap-2 p-2 hover:bg-blue-300 rounded-md transition duration-300"
       >
         <FontAwesomeIcon :icon="item.icon" class="w-6 h-6 min-w-[24px]" />
         <span v-show="isSidebarOpen" class="ml-2 whitespace-nowrap transition-all duration-500">{{ item.label }}</span>
@@ -39,17 +39,16 @@ const dashboardStore = useDashboardStore()
 const {isSidebarOpen} = storeToRefs(dashboardStore)
 
 const sidebarItemSource = [
-  {icon: 'fa-chart-line', label: 'Dashboard', link: '/dashboard'},
-  {icon: 'fa-briefcase', label: 'Portfolio', link: '/portfolio'},
-  {icon: 'fa-chart-pie', label: 'Portfolio Analysis', link: '/portfolio-analysis'},
-  {icon: 'fa-globe', label: 'Market', link: '/market'},
+  {icon: 'fa-chart-line', label: 'Dashboard', link: 'dashboard'},
+  {icon: 'fa-briefcase', label: 'Portfolio', link: 'portfolio'},
+  {icon: 'fa-chart-pie', label: 'Portfolio Analysis', link: 'portfolio-analysis'},
+  {icon: 'fa-globe', label: 'Market', link: 'market'},
+  {icon: 'fa-compass', label: 'Portfolio Planning', link: 'portfolio-planning'},
 ]
 
 const handleResize = () => {
   if (window.innerWidth <= 768) {
     isSidebarOpen.value = false
-  } else {
-    // isSidebarOpen.value = true
   }
 }
 

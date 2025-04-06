@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center flex-col">
     <div ref="scenarioSimulator" class="w-full" style="height: 320px"></div>
-    <div class="flex flex-row justify-center items-center">
-      <span>-10%</span>
+    <div class="flex flex-row justify-center items-center mt-4">
+      <span class="text-gray-700">-10%</span>
       <input
         :value="projectedGrowth"
         type="range"
@@ -10,12 +10,12 @@
         id="projectedGrowth"
         :min="-10"
         :max="20"
-        class="w-72 ml-2 mr-2"
+        class="w-[60%] ml-4 mr-4 h-2 rounded-lg cursor-pointer accent-indigo-600"
         @input="updateGrowth"
       />
-      <span>+20%</span>
+      <span class="text-gray-700">+20%</span>
     </div>
-    <span>Projected Growth {{ projectedGrowth }}%</span>
+    <span class="mt-2 text-gray-800 font-medium">Projected Growth: {{ projectedGrowth }}%</span>
   </div>
 </template>
 
