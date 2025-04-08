@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full w-1/2 bg-indigo-500 rounded-l-[120px] text-white flex flex-col items-center justify-center gap-4 absolute right-0 z-0 translate-x-[100%]"
+    class="h-full w-1/2 bg-indigo-500 rounded-l-[120px] text-white flex flex-col items-center justify-center gap-4 absolute right-0 z-0"
   >
     <h1 class="text-3xl font-bold text-center">Hello, Friend!</h1>
     <p class="text-gray-100 font-normal text-center text-lg">

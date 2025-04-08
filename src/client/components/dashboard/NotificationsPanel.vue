@@ -1,12 +1,15 @@
 <template>
   <div
-    class="absolute top-0 right-0 z-10 h-full w-full md:w-1/3 p-5 bg-white text-black border border-slate-200 shadow-xl overflow-y-auto"
+    class="fixed top-0 right-0 z-10 h-full w-full md:w-1/3 p-5 bg-white text-black border border-slate-200 shadow-xl overflow-y-auto"
   >
     <!-- Header -->
     <div class="flex justify-between items-center border-b-2 border-gray-300 py-4">
       <h1 class="text-2xl font-semibold text-gray-800">Notifications</h1>
-      <button @click="closeNotificationsPanel" class="focus:outline-none hover:text-red-500 transition duration-300">
-        <font-awesome-icon :icon="['fas', 'times']" class="w-6 h-6" />
+      <button
+        @click="closeNotificationsPanel"
+        class="focus:outline-none hover:text-red-500 transition-colors duration-200 ease-in-out"
+      >
+        <FontAwesomeIcon :icon="['fas', 'times']" class="w-6 h-6" />
       </button>
     </div>
 
@@ -15,11 +18,11 @@
       <div
         v-for="notification in notifications"
         :key="notification.id"
-        class="flex items-start space-x-3 p-4 border border-blue-100 rounded-lg hover:shadow-lg transition ease-in-out duration-200 justify-center"
+        class="flex items-start space-x-4 p-5 bg-blue-50 border border-blue-100 rounded-xl hover:shadow-lg transition-transform ease-in-out duration-200 cursor-pointer"
       >
-        <font-awesome-icon :icon="['fas', getIcon(notification.type)]" class="w-5 h-5 text-blue-500 flex-shrink-0" />
+        <FontAwesomeIcon :icon="['fas', getIcon(notification.type)]" class="w-5 h-5 text-blue-600 flex-shrink-0" />
         <div class="flex-1">
-          <h2 class="text-lg font-medium text-gray-700">{{ notification.title }}</h2>
+          <h2 class="text-lg font-medium text-gray-800">{{ notification.title }}</h2>
           <p class="text-sm text-gray-600">{{ notification.message }}</p>
         </div>
       </div>

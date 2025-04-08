@@ -1,5 +1,5 @@
 <template>
-  <div class="m-5 border-gray-300 flex justify-between items-center bg-white p-2 rounded-lg shadow-md">
+  <div class="m-5 mt-2 border-gray-300 flex justify-between items-center bg-white p-2 rounded-lg shadow-md">
     <!-- Sidebar Toggle Button -->
     <button class="focus:outline-none" @click="toggleSidebar">
       <font-awesome-icon :icon="['fas', 'bars']" class="w-5 h-5" />

@@ -1,6 +1,6 @@
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
-import { globalIgnores } from 'eslint/config'
+import {defineConfigWithVueTs, vueTsConfigs} from '@vue/eslint-config-typescript'
+import {globalIgnores} from 'eslint/config'
 import pluginOxlint from 'eslint-plugin-oxlint'
 import pluginVue from 'eslint-plugin-vue'
 
@@ -10,14 +10,7 @@ export default defineConfigWithVueTs(
     files: ['**/*.{ts,mts,tsx,vue}'],
   },
 
-  globalIgnores([
-    '**/dist/**',
-    '**/dist-ssr/**',
-    '**/coverage/**',
-    '**/node_modules/**',
-    '**/.yarn/**',
-    '**/env.d.ts',
-  ]),
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/node_modules/**', '**/.yarn/**', '**/env.d.ts']),
 
   {
     settings: {
@@ -41,21 +34,21 @@ export default defineConfigWithVueTs(
       'no-undef': 'off',
 
       'prefer-promise-reject-errors': 'off',
-      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
+      '@typescript-eslint/consistent-type-imports': ['error', {prefer: 'type-imports'}],
 
       // allow debugger during development only
       'no-debugger': 'error',
-      'no-console': 'warn',
+      // 'no-console': 'warn',
 
       '@typescript-eslint/no-unused-vars': 0,
       '@typescript-eslint/no-require-imports': 0,
       '@typescript-eslint/no-explicit-any': 0,
       '@typescript-eslint/no-namespace': 0,
       '@typescript-eslint/no-empty-object-type': 0,
-      '@typescript-eslint/no-unused-expressions': ['error', { allowShortCircuit: true }],
+      '@typescript-eslint/no-unused-expressions': ['error', {allowShortCircuit: true}],
 
       'vue/multi-word-component-names': 0,
       'vue/block-lang': 0,
     },
-  },
+  }
 )

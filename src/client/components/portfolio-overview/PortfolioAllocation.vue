@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">Portfolio Allocation</h2>
     <div ref="pieChart" class="w-full h-56" style="height: 400px"></div>
   </div>
 </template>
@@ -12,6 +11,8 @@ import {
   type TooltipComponentOption,
   LegendComponent,
   type LegendComponentOption,
+  ToolboxComponent,
+  TitleComponent,
 } from 'echarts/components'
 import {PieChart, type PieSeriesOption} from 'echarts/charts'
 import {LabelLayout} from 'echarts/features'
@@ -19,7 +20,15 @@ import {CanvasRenderer} from 'echarts/renderers'
 import {onMounted, onBeforeUnmount, ref, nextTick} from 'vue'
 
 // Register the components
-echarts.use([TooltipComponent, LegendComponent, PieChart, CanvasRenderer, LabelLayout])
+echarts.use([
+  TooltipComponent,
+  LegendComponent,
+  PieChart,
+  CanvasRenderer,
+  LabelLayout,
+  ToolboxComponent,
+  TitleComponent,
+])
 
 const pieChart = ref(null)
 
@@ -37,6 +46,10 @@ const originalData = [
 const allocationData = ref([...originalData])
 
 const options: EchartsOption = {
+  title: {
+    text: 'Portfolio Allocation',
+    left: 'center',
+  },
   tooltip: {
     trigger: 'item',
     formatter: '{a} <br/>{b}: {c} ({d}%)',
@@ -47,6 +60,12 @@ const options: EchartsOption = {
     left: 'center',
     textStyle: {
       color: '#4B5563',
+    },
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      restore: {show: true},
     },
   },
   series: [

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center gap-6 w-1/2 absolute left-0 z-0 translate-x-[-100%] top-5 md:top-[10%]">
+  <div class="flex flex-col justify-center gap-6 w-1/2 absolute left-0 z-0 top-5 md:top-[10%]">
     <h1 class="text-3xl font-extrabold text-center">Sign In</h1>
     <nav class="flex gap-4 text-center mx-auto">
       <a href="#"><GoogleIcon class="h-12 w-12 border-2 border-slate-200 p-2 rounded-lg shadow-lg" /></a>
